@@ -41,7 +41,7 @@ parser.on("text", oText => {
         return;
     }
     const sTag = aCurState[aCurState.length  - 1];
-    let sText = oText.text.replace("div", "span");
+    let sText = oText.text.replace(/div/g, "span");
     if(sTag == "mat_formattedtext" || sTag == "mattext"){
         if(sResponse){
             streamOutFile.write(sResponse + ") " + sText + "\n");
@@ -67,7 +67,7 @@ var streamInfile = fs.createReadStream(sFile, { encoding: 'utf8' });
 parser.on("error", err => console.log(err));
 
 streamOutFile.once('open', function(fd) {
-    streamOutFile.write("<style>td{padding-right:2em;vertical-align:top}</style>");
+    streamOutFile.write("<style>td{padding-right:2em;vertical-align:top}table, th, td {border:none} p{padding-bottom:.5em}table{padding-left:.5em}</style>");
     streamInfile.pipe(parser);
 });
 
