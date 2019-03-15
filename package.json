@@ -1,0 +1,19 @@
+{
+    "name": "blackboard2html",
+    "version": "1.0.0",
+    "description": "convert blackboard .dat file to html for a printed test",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "blackboard",
+        "paper"
+    ],
+    "author": "Rich Hildred",
+    "license": "MIT",
+    "dependencies": {
+        "parse5-sax-parser": "^5.1.0"
+    }
+}
