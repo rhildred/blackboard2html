@@ -41,7 +41,7 @@ parser.on("text", oText => {
         return;
     }
     const sTag = aCurState[aCurState.length  - 1];
-    let sText = oText.text.replace(/div/g, "span");
+    let sText = oText.text.replace(/div>/g, "span>");
     if(sTag == "mat_formattedtext" || sTag == "mattext"){
         if(sResponse){
             streamOutFile.write(sResponse + ") " + sText + "\n");
